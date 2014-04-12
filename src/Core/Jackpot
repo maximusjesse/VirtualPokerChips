@@ -1,8 +1,0 @@
-public class Jackpot extends User {
-	// String userID
-	// float points
-	// float pointsPushed
-	public Jackpot() {
-		super("Jackpot", 0);
-	}
-}
