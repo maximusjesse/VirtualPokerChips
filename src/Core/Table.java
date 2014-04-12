@@ -8,8 +8,17 @@ import java.util.ArrayList;
 
 public class Table {
 	private User currentUser;
-	private ArrayList<User> users = new ArrayList<User>(); 
+	private ArrayList<User> users = new ArrayList<User>();
 	private MasterUser masterUser;
+	private Jackpot jackpot = new Jackpot();
+	
+	/*
+	 * Constructor
+	 */
+	public Table(MasterUser master) {
+		users.add(master);
+		currentUser = master;
+	}
 	
 	/*
 	 * Adds a user to the array list of users
@@ -28,10 +37,17 @@ public class Table {
 		u.setPoints(u.getPoints() + f);
 	}
 	
-	public void update() {	
-	
+	/*
+	 * Prints out scoreboard by using toString for every single user
+	 * @return String Text scoreboard of users
+	 */
+	public String scoreboard() {
+		String _output = String.format("%-12s %12s", "Player ID", "Current Points");
+		for(int i = 0; i < users.size() - 1; i++) {
+			_output += "\n" + users.get(i).toString();			
+		}
+		return _output;
 	}
-	
 	
 	/*
 	 * Adds masterUser as first user in users

@@ -3,9 +3,12 @@
  * @date 		04-12-2014
  * @author      Mark Qi
  */
+
+package Core;
+
 public class Jackpot extends User {
 	/*
-	 * Initializing the Jackpot class with preset name and value of 0
+	 * Constructor,i nitializing the Jackpot class with preset name and value of 0
 	 */
 
 	public Jackpot() {
@@ -18,6 +21,6 @@ public class Jackpot extends User {
 	 * @return 				returns the amt of points split to each person
 	**/
 	public float calcSplit(int numWinners) {
-		return (this.points/((float)numWinners);
+		return (this.getPoints() / ((float) numWinners));
 	}
 }

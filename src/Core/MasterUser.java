@@ -6,5 +6,12 @@ public class MasterUser extends User {
 	public MasterUser(String userID, float points) {
 		super(userID, points);
 	}
+	
+	/*
+	 * Constructor
+	 */
+	public MasterUser(String userID) {
+		super(userID);
+	}
 
 }

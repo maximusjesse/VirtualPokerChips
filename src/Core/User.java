@@ -77,8 +77,7 @@ public class User {
 	 * @return String toString()
 	 */
 	public String toString() {
-		//return String.format("%s %.2f", userID + points);
-		return userID;
+		return String.format("%-12s %.2f", userID, points);
 	}
 	
 }
