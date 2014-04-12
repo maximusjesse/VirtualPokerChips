@@ -5,17 +5,13 @@ Virtual Poker Chips
   * _String_ userID
   * _float_ points
   * _float_ pointsPushed
-  * _boolean_ playing
   * **String** getUserID()
   * **float** getPoints()
   * **float** getPushed()
   * **boolean** isPlaying()
   * **void** setUserID(_String_)
-  * **void** pushPoints(_float_)
-  * **void** receivePoints(_float_)
-
-    Recieve the points gained that round and reset the pointsPushed. Losing hands recieve 0 points.
-
+  * **void** setPointsPushed(_float_)
+  * **void** setPoints(_float_)
   * **String** toString()
 
 * _class_ MasterUser **extends** User
@@ -26,8 +22,7 @@ Virtual Poker Chips
   * _User_ currentUser
   * _MasterUser_ masterUser
   * **void** addUser(_String_)
-  * **void** sendPoints(_float_)
-  * **void** receivePoints(_float_)
+  * **void** setPoints(_User_,_float_)
   * **void** update()
 
 * _class_ DisplayChips
