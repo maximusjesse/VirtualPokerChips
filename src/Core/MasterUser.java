@@ -1,3 +1,4 @@
+package Core;
 public class MasterUser extends User {
 	// String userID
 	// float points

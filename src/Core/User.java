@@ -8,6 +8,22 @@ public class User {
 	private String userID;
 	private float points, pointsPushed = 0;
 	
+	
+	/*
+	 * Constructor
+	 */
+	public User(String id) {
+		this.userID = id;
+	}
+	
+	/*
+	 * Constructor
+	 */
+	public User(String id, float p) {
+		this.userID = id;
+		this.points = p;
+	}
+	
 	/*
 	 * Gets user ID
 	 * @return String Returns user ID
@@ -55,4 +71,14 @@ public class User {
 	public float getPointsPushed() {
 		return pointsPushed;
 	}
+	
+	/*
+	 * toString method for user id and points
+	 * @return String toString()
+	 */
+	public String toString() {
+		//return String.format("%s %.2f", userID + points);
+		return userID;
+	}
+	
 }

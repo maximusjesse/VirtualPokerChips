@@ -25,7 +25,11 @@ public class Table {
 	 * @param f New float difference value to update User point value to
 	 */
 	public void setPoints(User u, float f) {
-		u.setPoints(f);
+		u.setPoints(u.getPoints() + f);
+	}
+	
+	public void update() {	
+	
 	}
 	
 	
@@ -33,7 +37,8 @@ public class Table {
 	 * Adds masterUser as first user in users
 	 */
 	public static void main(String[] args) {
-		users.add(masterUser);
+		User a = new User("This test code is less useful than Jan.");
+		System.out.println(a);
 	}
 
 }
