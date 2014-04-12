@@ -25,7 +25,8 @@ public class User {
 	}
 	
 	/*
-	 * Gets the amount of points user currently has	
+	 * Gets the amount of points user currently has
+	 * @return float User points returned
 	 */
 	public float getPoints() {
 		return points;
@@ -37,5 +38,13 @@ public class User {
 	 */
 	public void setPointsPushed(float p) {
 		pointsPushed = p;	
+	}
+	
+	/*
+	 * Gets points pushed
+	 * @return float Points pushed
+	 */
+	public float getPointsPushed() {
+		return pointsPushed;
 	}
 }
