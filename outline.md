@@ -24,6 +24,7 @@ Virtual Poker Chips
   * **void** addUser(_String_)
   * **void** setPoints(_User_,_float_)
   * **void** update()
+  * **String** scoreboard()
 
 * _class_ DisplayChips
   * **void** getUsers()

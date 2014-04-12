@@ -6,7 +6,7 @@ package Core;
 public class User {
 	
 	private String userID;
-	private float points, pointsPushed;
+	private float points, pointsPushed = 0;
 	
 	/*
 	 * Gets user ID
