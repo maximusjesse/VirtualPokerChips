@@ -15,11 +15,11 @@ public class Tester {
 	}
 	
 	public void testTable() {
-		MasterUser master = new MasterUser("Test Master");
+		MasterUser master = new MasterUser("Test Master zzzzzzzzzzz");
 		Table testTable = new Table(master);
 		User a = new User("A");
 		User b = new User("B");
-		User c = new User("C");
+		User c = new User("C", 109182391823.1231239283f);
 		testTable.addUser(a);
 		testTable.addUser(b);
 		testTable.addUser(c);

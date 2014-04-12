@@ -42,8 +42,8 @@ public class Table {
 	 * @return String Text scoreboard of users
 	 */
 	public String scoreboard() {
-		String _output = String.format("%-12s %12s", "Player ID", "Current Points");
-		for(int i = 0; i < users.size() - 1; i++) {
+		String _output = String.format("%-20s%12s", "Player ID", "Current Points");
+		for(int i = 0; i < users.size(); i++) {
 			_output += "\n" + users.get(i).toString();			
 		}
 		return _output;

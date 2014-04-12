@@ -77,7 +77,10 @@ public class User {
 	 * @return String toString()
 	 */
 	public String toString() {
-		return String.format("%-12s %.2f", userID, points);
+		if (userID.length() > 20) {
+			return String.format("%-20s%.2f", userID.substring(0, 19), points);
+		}
+		return String.format("%-20s%.2f", userID, points);
 	}
 	
 }
