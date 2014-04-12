@@ -7,8 +7,6 @@ public class User {
 	
 	private String userID;
 	private float points, pointsPushed = 0;
-	private boolean isReady;
-	private boolean isPlaying;
 	
 	
 	/*
@@ -74,40 +72,6 @@ public class User {
 		return pointsPushed;
 	}
 	
-	/*
-	 * Sets isReady boolean
-	 * @param boolean True if user clicks ready button, false otherwise
-	 */
-	public void setIsReady(boolean b) {
-		isReady = b;
-	}
-	
-	/*
-	 * Sets isPlaying boolean
-	 * @param boolean Set false if user folds, true otherwise
-	 */
-	public void setIsPlaying(boolean b) {
-		this.isPlaying = b;
-	}
-	
-	/*
-	 * Gets isPlaying boolean
-	 * @return boolean True if user hadn't folded, false otherwise
-	 */
-	public boolean getIsPlaying() {
-		return isPlaying;
-	}
-	
-	/*
-	 * Checks to see if a user is ready 
-	 */
-	public float bet() {
-		if (isReady) {
-			Table.jackpot.setPoints(Table.jackpot.getPoints() + getPointsPushed());
-		}
-		return pointsPushed;
-	}
-
 	/*
 	 * toString method for user id and points
 	 * @return String toString()
