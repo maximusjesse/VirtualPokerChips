@@ -8,9 +8,16 @@ import java.util.ArrayList;
 
 public class Table {
 	private User currentUser;
-	private ArrayList<User> users = new ArrayList<User>(); 
 	private MasterUser masterUser;
-	
+	private ArrayList<User> users;
+	private Jackpot jackpot;
+
+	public Table(String masterUserName) {
+		users = new ArrayList<User>(); 
+		masterUser = new MasterUser(masterUserName, 0);
+		jackpot = new Jackpot();
+		user.add(masterUser);
+	}
 	/*
 	 * Adds a user to the array list of users
 	 * @param u User to be added
@@ -25,7 +32,7 @@ public class Table {
 	 * @param f New float difference value to update User point value to
 	 */
 	public void setPoints(User u, float f) {
-		u.setPoints(f);
+		u.setPoints(u.getPoints() + f);
 	}
 	
 	
@@ -33,7 +40,7 @@ public class Table {
 	 * Adds masterUser as first user in users
 	 */
 	public static void main(String[] args) {
-		users.add(masterUser);
+		setPoins(a, 10.0f)
 	}
 
 }
