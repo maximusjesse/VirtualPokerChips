@@ -30,5 +30,12 @@ public class User {
 	public float getPoints() {
 		return points;
 	}
-
+	
+	/*
+	 * Sets the amount of points to be pushed out to be changed
+	 * @param p New value to change to
+	 */
+	public void setPointsPushed(float p) {
+		pointsPushed = p;	
+	}
 }
