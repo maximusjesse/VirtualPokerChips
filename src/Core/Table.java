@@ -5,19 +5,22 @@
 package Core;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Table {
 	private User currentUser;
 	private ArrayList<User> users = new ArrayList<User>();
 	private MasterUser masterUser;
-	private Jackpot jackpot = new Jackpot();
+	public static Jackpot jackpot;
 	
 	/*
 	 * Constructor
 	 */
 	public Table(MasterUser master) {
 		users.add(master);
+		this.masterUser = master;
 		currentUser = master;
+		this.jackpot = new Jackpot();
 	}
 	
 	/*
@@ -48,6 +51,42 @@ public class Table {
 		}
 		return _output;
 	}
+	
+	/*
+	 * Prompts master to end a round
+	 * @return boolean If master ends round, returns true, false otherwise
+	 */
+	public boolean endRound() {
+		System.out.println("End round?");
+		Scanner scan = new Scanner(System.in);
+		masterUser.setEndRound(scan.nextBoolean());
+		return masterUser.getEndRound();
+	}
+	
+	/*
+	 * Collects a round of user bets, pools it into the jackpot, then prompts master
+	 * to end round;
+	 */
+	public void playARound() {
+		while (!this.masterUser.getEndRound()) {
+			for (int i = 0; i < users.size() - 1; i++) {
+				if (users.get(i).getIsPlaying()) {
+					users.get(i).bet();
+				}
+			}
+			if (endRound()) {
+				update();
+			}
+		}
+	}
+	
+	/*
+	 * Updates users with winnings after betting rounds complete
+	 */
+	public void update() {
+		
+	}
+	
 	
 	/*
 	 * Adds masterUser as first user in users
