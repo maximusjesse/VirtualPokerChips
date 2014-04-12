@@ -33,11 +33,19 @@ public class User {
 	}
 	
 	/*
+	 * Sets the amount of points user currently has
+	 * @param float Points to be updated to
+	 */
+	public void setPoints(float f) {
+		this.points = f;
+	}
+	
+	/*
 	 * Sets the amount of points to be pushed out to be changed
 	 * @param p New value to change to
 	 */
 	public void setPointsPushed(float p) {
-		pointsPushed = p;	
+		this.pointsPushed = p;	
 	}
 	
 	/*
