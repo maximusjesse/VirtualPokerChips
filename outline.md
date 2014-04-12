@@ -1,25 +1,38 @@
 Virtual Poker Chips
 ======
 
-* _class_ user
-  * _string_ userID
+* _class_ User
+  * _String_ userID
   * _float_ points
-  * _float_ pointsChange
-  * **string** getUserID()
+  * _float_ pointsPushed
+  * _boolean_ playing
+  * **String** getUserID()
   * **float** getPoints()
-  * **float** getChange()
-  * **void** updateChange(_float_)
-  * **void** updatePoints(_float_)
+  * **float** getPushed()
+  * **boolean** isPlaying()
+  * **void** setUserID(_String_)
+  * **void** pushPoints(_float_)
+  * **void** receivePoints(_float_)
+
+    Recieve the points gained that round and reset the pointsPushed. Losing hands recieve 0 points.
+
   * **String** toString()
 
-* _class_ jackpot **extends** user
+* _class_ MasterUser **extends** User
 
-* _class_ driver
-  * **void** 
+* _class_ Jackpot **extends** User
+
+* _class_ Table
+  * _User_ currentUser
+  * _MasterUser_ masterUser
+  * **void** addUser(_String_)
   * **void** sendPoints(_float_)
   * **void** receivePoints(_float_)
   * **void** update()
 
-* _class_ displayChips
+* _class_ DisplayChips
   * **void** getUsers()
   * **void** displayPoints()
+
+* _class_ Driver
+  * ??? networking stuff here ???
