@@ -49,11 +49,13 @@ public class Table {
 		for(int i = 0; i < users.size(); i++) {
 			_output += "\n" + users.get(i).toString();			
 		}
+		_output += "\n" + jackpot.toString();
 		return _output;
 	}
 	
 	/*
-	 * Prompts master to end a round
+	 * UNFINISHED
+	 * Prompts master to end a round, needs to be changed when implementing interface
 	 * @return boolean If master ends round, returns true, false otherwise
 	 */
 	public boolean endRound() {
@@ -68,9 +70,9 @@ public class Table {
 	 * to end round;
 	 */
 	public void playARound() {
-		while (!this.masterUser.getEndRound()) {
+		while (!this.masterUser.getEndRound()) {  
 			for (int i = 0; i < users.size() - 1; i++) {
-				if (users.get(i).getIsPlaying()) {
+				if (users.get(i).isPlaying()) {
 					users.get(i).bet();
 				}
 			}
@@ -81,19 +83,21 @@ public class Table {
 	}
 	
 	/*
+	 * UNFINISHED
 	 * Updates users with winnings after betting rounds complete
+	 * Prompts masterUser to point out the winners, needs to be changed when implementing interface
 	 */
 	public void update() {
-		
+		int _numWinners = masterUser.promptForWinners(users);
+		for (int i = 0; i < users.size(); i++) {
+			if (users.get(i).isWinner()) {
+				setPoints(users.get(i), jackpot.calcSplit(_numWinners));
+			}
+		}
+		jackpot.setPoints(0.0f);
+		for (int i = 0; i < users.size(); i++) {
+			users.get(i).setWinner(false);
+		}
+		System.out.println(scoreboard());				
 	}
-	
-	
-	/*
-	 * Adds masterUser as first user in users
-	 */
-	public static void main(String[] args) {
-		User a = new User("This test code is less useful than Jan.");
-		System.out.println(a);
-	}
-
 }

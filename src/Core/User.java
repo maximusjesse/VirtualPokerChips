@@ -6,9 +6,11 @@ package Core;
 public class User {
 	
 	private String userID;
-	private float points, pointsPushed = 0;
-	private boolean isReady;
-	private boolean isPlaying;
+	private float points = 100;
+	private float pointsPushed = 0;
+	private boolean ready = false;;
+	private boolean playing = true;
+	private boolean winner = false;
 	
 	
 	/*
@@ -64,6 +66,10 @@ public class User {
 	 */
 	public void setPointsPushed(float p) {
 		this.pointsPushed = p;	
+		this.points = points - p;
+		if (p == 0.0f) {
+			setIsPlaying(false);
+		}
 	}
 	
 	/*
@@ -78,8 +84,8 @@ public class User {
 	 * Sets isReady boolean
 	 * @param boolean True if user clicks ready button, false otherwise
 	 */
-	public void setIsReady(boolean b) {
-		isReady = b;
+	public void setReady(boolean b) {
+		this.ready = b;
 	}
 	
 	/*
@@ -87,22 +93,38 @@ public class User {
 	 * @param boolean Set false if user folds, true otherwise
 	 */
 	public void setIsPlaying(boolean b) {
-		this.isPlaying = b;
+		this.playing = b;
 	}
 	
 	/*
 	 * Gets isPlaying boolean
 	 * @return boolean True if user hadn't folded, false otherwise
 	 */
-	public boolean getIsPlaying() {
-		return isPlaying;
+	public boolean isPlaying() {
+		return playing;
 	}
 	
+	/**
+	 * Checks to see if user won this round
+	 * @return the winner
+	 */
+	public boolean isWinner() {
+		return winner;
+	}
+
+	/**
+	 * Sets if user wins
+	 * @param winner True if won, false otherwise
+	 */
+	public void setWinner(boolean winner) {
+		this.winner = winner;
+	}
+
 	/*
 	 * Checks to see if a user is ready 
 	 */
 	public float bet() {
-		if (isReady) {
+		if (isPlaying() && ready) {
 			Table.jackpot.setPoints(Table.jackpot.getPoints() + getPointsPushed());
 		}
 		return pointsPushed;
