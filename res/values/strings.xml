@@ -1,5 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">VirtualPokerChips</string>
+    <string name="app_name">ChipCounter</string>
+    <string name="name">What is your name?</string>
+    <string name="button_next">Next</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_display_message">My Message</string>
+    <string name="checkbox_text">Host?</string>
+    <string name="hello_world">Hello world!</string>
 
 </resources>

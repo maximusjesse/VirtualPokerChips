@@ -1,0 +1,35 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:gravity="center"
+    >
+
+    <EditText
+        android:id="@+id/edit_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:gravity="left"
+        android:layout_marging="4dp"
+        android:hint="@string/name" >
+
+        <requestFocus />
+    </EditText>
+
+<CheckBox android:id="@+id/checkbox_meat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/checkbox_text"
+        android:layout_margin="4dp"
+        android:onClick="onCheckboxClicked"/>
+
+<android.widget.Button
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="bottom"
+    android:onClick="sendMessage"
+    android:text="@string/button_next" />
+
+</LinearLayout>
